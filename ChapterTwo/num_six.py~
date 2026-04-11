@@ -1,0 +1,3 @@
+if grade>=90:
+print('Congratulatons! Your grade of 91 earns you an A in this course')
+input score = (int)input("Enter your score!")
