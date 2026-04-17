@@ -12,13 +12,13 @@ user_password = input("Enter a password: ")
 length_checker = len(user_password)
 
 
-if(length_checker < 8):
+if length_checker < 8:
     print("very weak")
-elif(length_checker == 8):
+elif length_checker == 8:
     print("weak")
-elif(length_checker == 8 and length_checker <= 16):
+elif length_checker > 8 and length_checker <= 16:
     print("strong")
-elif(length_checker > 16):
+elif length_checker > 16:
     print("very strong")
     
 
