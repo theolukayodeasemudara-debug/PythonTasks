@@ -1,1 +1,27 @@
-discountcalc
+# Design a program that applies tiered discounts based on a customer's total spending in a store. The greater the purchase amount, the higher the discount offered.
+
+# Purchases between 1,000 and 10,000 receive a 5% discount.
+# Purchases between 10,000 and 50,000 receive a 10% discount.
+# Purchases above 50,000 receive a 20% discount.
+
+# Ensure the program calculates and displays the appropriate discount for the given amount
+
+
+# Pseudo code
+# Start the program
+# Ask user for the total amount that they have spent
+# if the user spending is within the 1000 and 10,000 range, calc using a 5% discount offer
+# if the user spending is within the 10,000 and 50,000 range, calc using using 10% discount offer
+# if the user spending is above 50,000 range, calc using the 20% discount offer
+
+
+
+user_amount = input("What is your total spending amount? ")
+
+if(user_amount >= "1000" and user_amount <="10000"):
+    discount = user_amount * 0.05
+    print("You have received a 5% discount! of", dicount),
+    print()
+
+
+
