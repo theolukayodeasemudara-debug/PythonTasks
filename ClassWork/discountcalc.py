@@ -21,13 +21,16 @@ user_amount = int(input("What is your total spending amount? "))
 
 if(user_amount >= 1000 and user_amount <=10000):
     discount = user_amount * 0.05
-    print("You have received a 5% discount! of", discount)
+    new_discount = user_amount - discount
+    print("You have received a 5% discount! of {discount} and will pay {new_discount}")
 elif(user_amount>=10000 and user_amount<=50000):
     discount = user_amount * 0.1
-    print("You have received a 10% discount! of", discount)
+    new_discount = user_amount - discount
+    print("You have received a 10% discount! of {discount} and will pay {new_discount}")
 elif(user_amount>50000):
     discount = user_amount * 0.2
-    print("You have received a 20% discount! of", discount)
+    new_discount = user_amount - discount
+    print("You have received a 20% discount! of {discount} and will pay {new_discount}")
     
 
 
