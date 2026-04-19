@@ -42,7 +42,7 @@ phone_submenu = """
         
         
 # START OF MESSAGES MENU OPTIONS        
-messagesMenu = """
+messages_menu = """
     Messages
     1.Write message
     2.Inbox
@@ -229,7 +229,7 @@ clock_menu = """
 
 
 # START OF PROFILES MENU OPTIONS
-profilesMenu = """
+profiles_menu = """
     profiles
     """
 # End OF PROFILES MENU OPTIONS
@@ -260,20 +260,26 @@ while(True):
             option = int(input("Enter menu option: "))
             if option == 7: 
                 print(messages_submenu)
-            elif option != 7:
-                print(messages_submenu)
-                continue
-                option = int(input("Enter menu option: "))
                 if option == 1:
                     print(messages_innersubmenu_one)
                 elif option == 2:
                     print(messages_innersubmenu_two)
                 elif option != 1 and option !=2:
-                    print(messages_innersubmenu_two)
+                    # print(messages_submenu)
                     continue
+            elif option != 7:
+                # print("Invalid entry")
+                print(messages_menu)
+                continue
+                option = int(input("Enter menu option: "))
+
 
         case 3:
             print(chat_menu)
+            option = int(input("Enter menu option: "))
+            if option !=7:
+                print(main_menu)
+                continue
             
         case 4:
             print(call_registermenu)
@@ -304,23 +310,52 @@ while(True):
 
         case 7:
             print(calldivert_menu) 
+            option = int(input("Enter menu option: "))
+            if option !=1:
+                print(main_menu)
+                continue
 
         case 8:
             print(games_menu)
+            option = int(input("Enter menu option: "))
+            if option !=1:
+                print(main_menu)
+                continue
             
         case 9:
             print(calculator_menu)
+            option = int(input("Enter menu option: "))
+            if option !=1:
+                print(main_menu)
+                continue
             
         case 10:
             print(reminders_menu)
+            option = int(input("Enter menu option: "))
+            if option !=1:
+                print(main_menu)
+                continue
             
         case 11:
             print(clock_menu)
+            option = int(input("Enter menu option: "))
+            if option !=1:
+                print(main_menu)
+                continue
             
         case 12:
-            print(profiles)
+            print(profiles_menu)
+            option = int(input("Enter menu option: "))
+            if option !=1:
+                print(main_menu)
+                continue
             
         case 13:
             print(sim_services_menu)
+            option = int(input("Enter menu option: "))
+            if option !=1:
+                print(main_menu)
+                continue
         case _:   
             print("You entered a wrong input")
+            break
