@@ -12,13 +12,13 @@ main_menu = """
     9.Calculator
     10.Reminders
     11.Clock
-    12.Profiles
+    12.profiles
     13.SIM services
     0.Exit
     """
 
 # START OF PHONEBOOK MENU OPTIONS
-phoneMenu = """
+phone_menu = """
     Phone Book
     1.Search
     2.Service Nos
@@ -32,7 +32,7 @@ phoneMenu = """
     10.Voice tags
     0.Go back
     """
-phoneSubMenu = """
+phone_submenu = """
     Options
     1.Type of view
     2.Memory status
@@ -56,19 +56,19 @@ messagesMenu = """
     10.Service command editor
     """;
     
-messagesSubMenu = """
+messages_submenu = """
     Message settings
     1.Set 1
     3.Common
     """
-messagesInnerSubMenuOne = """
+messages_innersubmenu_one = """
     Set 1
     1.Message center number
     2.Message sent as
     3.Message validity
     """
 
-messagesInnerSubMenuTwo = """
+messages_innersubmenu_two = """
     Common
     1.Delivery reports
     2.Reply via same centre
@@ -79,14 +79,14 @@ messagesInnerSubMenuTwo = """
 
 
 # START OF CHAT MENU OPTIONS
-chatMenu = """
+chat_menu = """
     Chat
     """
 # END OF CHAT MENU OPTIONS
 
 
 # START OF CALL REGISTER MENU OPTIONS
-callRegisterMenu = """
+call_registermenu = """
     Call register
     1.Missed calls
     2.Received calls
@@ -98,7 +98,7 @@ callRegisterMenu = """
     8.Prepaid credit
     """
 
-callRegSubMenuOne = """
+call_registersubmenu_one = """
     Call register
     1.Last call duration
     2.All call's duration
@@ -107,27 +107,27 @@ callRegSubMenuOne = """
     5.Clear timers
     """
     
-callRegSubMenuTwo = """
+call_registersubmenu_two = """
     Show call costs
     1.Last call cost
     2.All call's cost
     3.Clear counters
     """
     
-callRegSubMenuThree = """
+call_registersubmenu_three = """
     Call cost settings
     1.Call cost limit
     2.Show costs in
     """
     
-callRegSubMenuFour = """
+call_registersubmenu_four = """
     Prepaid credit
     """
 # END OF CALL REGISTER MENU OPTIONS
 
 
 # START OF TONES MENU OPTIONS
-tonesMenu = """
+tones_menu = """
     Tones
     1.Ringing tone
     2.Ringing volume
@@ -143,7 +143,7 @@ tonesMenu = """
 
 
 # START OF SETTINGS MENU
-settingsMenu = """
+settings_menu = """
     Settings
     1.Call settings
     2.Phone settings
@@ -151,7 +151,7 @@ settingsMenu = """
     4.Restore factory settings
     """
     
-settingsSubMenuOne = """
+settings_submenu_one = """
     Call settings
     1.Automatic redial
     2.Speed dialling
@@ -161,7 +161,7 @@ settingsSubMenuOne = """
     6.Automatic answer
     """
     
-settingsSubMenuTwo = """
+settings_submenu_two = """
     Phone settings
     1.Language
     2.Cell info display
@@ -171,7 +171,7 @@ settingsSubMenuTwo = """
     6.Confirm SIM service actions
     """
     
-settingsSubMenuThree = """
+settings_submenu_three = """
     Security settings
     1.PIN code request
     2.Call barring service
@@ -181,42 +181,42 @@ settingsSubMenuThree = """
     6.Change access codes
     """
     
-settingsSubMenuFour = """
+settings_submenu_four = """
     Restore factory settings
     """
 # END OF SETTINGS MENU OPTIONS
 
 
 # START OF CALL DIVERT MENU OPTIONS
-callDivertMenu = """
+calldivert_menu = """
     Call divert
     """
 # End OF CALL DIVERT MENU OPTIONS
 
 
 # START OF GAMES MENU OPTIONS
-gamesMenu = """
+games_menu = """
     Games
     """
 # End OF GAMES MENU OPTIONS
 
 
 # START OF CALCULATOR MENU OPTIONS
-calculatorMenu = """
+calculator_menu = """
     Calculator
     """
 # End OF CALCULATOR MENU OPTIONS
 
 
 # START OF REMINDERS MENU OPTIONS
-remindersMenu = """
+reminders_menu = """
     Reminders
     """
 # End OF REMINDERS MENU OPTIONS
 
 
 # START OF CLOCK MENU OPTIONS
-clockMenu = """
+clock_menu = """
     Clock
     1.Alarm clock
     2.Clock settings
@@ -230,88 +230,97 @@ clockMenu = """
 
 # START OF PROFILES MENU OPTIONS
 profilesMenu = """
-    Profiles
+    profiles
     """
 # End OF PROFILES MENU OPTIONS
 
 
 # START OF SIM SERVICES MENU OPTIONS
-simServicesMenu = """
+sim_services_menu = """
     SIM services
     """
 # End OF SIM SERVICES MENU OPTIONS
 
+
 print(main_menu)
-user_option = int(input("Enter menu option: "))        
-
-# while():
-match user_option:
-    case 1:
-        print(phoneMenu)
-        option = int(input("Enter menu option: "))
-        if option == 8:
-            print(phoneSubMenu)
-        
-    case 2:
-        print(messagesMenu)
-        option = int(input("Enter menu option: "))
-        if option == 7: 
-            print(messagesSubMenu)
+while(True):
+    user_option = int(input("Enter menu option: "))        
+    match user_option:
+        case 1:
+            print(phone_menu)
             option = int(input("Enter menu option: "))
-            if option == 1:
-                print(messagesInnerSubMenuOne)
-            elif option == 2:
-                print(messagesInnerSubMenuTwo)
-
-    case 3:
-        print(chatMenu)
-        
-    case 4:
-        print(callRegisterMenu)
-        option = int(input("Enter menu option: "))
-        if(option == 5):
-            print(callRegSubMenuOne)
-        elif(option == 6):
-            print(callRegSubMenuTwo)
-        elif(option == 7):
-            print(callRegSubMenuThree)
-        elif(option == 8):
-            print(callRegSubMenuFour)
+            if option == 8:
+                print(phone_submenu)
+            elif option !=8:
+                print(main_menu)
+                continue
             
-    case 5:
-        print(tonesMenu)
-        
-    case 6:
-        print(settingsMenu)
-        option = int(input("Enter menu option: "))
-        if(option == 1):
-            print(settingsSubMenuOne)
-        elif(option == 2):
-            print(settingsSubMenuOne)
-        elif(option == 3):
-            print(settingsSubMenuThree)
-        elif(option == 4):
-            print(settingsSubMenuFour)
+        case 2:
+            print(messages_menu)
+            option = int(input("Enter menu option: "))
+            if option == 7: 
+                print(messages_submenu)
+            elif option != 7:
+                print(messages_submenu)
+                continue
+                option = int(input("Enter menu option: "))
+                if option == 1:
+                    print(messages_innersubmenu_one)
+                elif option == 2:
+                    print(messages_innersubmenu_two)
+                elif option != 1 and option !=2:
+                    print(messages_innersubmenu_two)
+                    continue
 
-    case 7:
-        print(callDivertMenu) 
+        case 3:
+            print(chat_menu)
+            
+        case 4:
+            print(call_registermenu)
+            option = int(input("Enter menu option: "))
+            if(option == 5):
+                print(call_registersubmenu_one)
+            elif(option == 6):
+                print(call_registersubmenu_two)
+            elif(option == 7):
+                print(call_registersubmenu_three)
+            elif(option == 8):
+                print(call_registersubmenu_four)
+                
+        case 5:
+            print(tones_menu)
+            
+        case 6:
+            print(settings_menu)
+            option = int(input("Enter menu option: "))
+            if(option == 1):
+                print(settings_submenu_one)
+            elif(option == 2):
+                print(settings_submenu_two)
+            elif(option == 3):
+                print(settings_submenu_three)
+            elif(option == 4):
+                print(settings_submenu_four)
 
-    case 8:
-        print(gamesMenu)
-        
-    case 9:
-        print(calculatorMenu)
-        
-    case 10:
-        print(remindersMenu)
-        
-    case 11:
-        print(clockMenu)
-        
-    case 12:
-        print(Profiles)
-        
-    case 13:
-        print(simServicesMenu)
-    case _:   
-        print("You entered a wrong input")
+        case 7:
+            print(calldivert_menu) 
+
+        case 8:
+            print(games_menu)
+            
+        case 9:
+            print(calculator_menu)
+            
+        case 10:
+            print(reminders_menu)
+            
+        case 11:
+            print(clock_menu)
+            
+        case 12:
+            print(profiles)
+            
+        case 13:
+            print(sim_services_menu)
+        case _:   
+            print("You entered a wrong input")
