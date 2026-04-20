@@ -60,6 +60,7 @@ messages_submenu = """
     Message settings
     1.Set 1
     3.Common
+    press 0 to return
     """
 messages_innersubmenu_one = """
     Set 1
@@ -81,6 +82,7 @@ messages_innersubmenu_two = """
 # START OF CHAT MENU OPTIONS
 chat_menu = """
     Chat
+    0 to return
     """
 # END OF CHAT MENU OPTIONS
 
@@ -96,10 +98,11 @@ call_registermenu = """
     6.Show call costs
     7.Call cost settings
     8.Prepaid credit
+    0 to return
     """
 
 call_registersubmenu_one = """
-    Call register
+    Show call duration
     1.Last call duration
     2.All call's duration
     3.Received call's duration
@@ -138,6 +141,7 @@ tones_menu = """
     7.Warning and game tones
     8.Vibrating alert
     9.Screen saver
+    0 to return
     """
 # END OF TONES MENU OPTIONS
 
@@ -190,6 +194,7 @@ settings_submenu_four = """
 # START OF CALL DIVERT MENU OPTIONS
 calldivert_menu = """
     Call divert
+    0 to return
     """
 # End OF CALL DIVERT MENU OPTIONS
 
@@ -197,6 +202,7 @@ calldivert_menu = """
 # START OF GAMES MENU OPTIONS
 games_menu = """
     Games
+    o to return
     """
 # End OF GAMES MENU OPTIONS
 
@@ -211,6 +217,7 @@ calculator_menu = """
 # START OF REMINDERS MENU OPTIONS
 reminders_menu = """
     Reminders
+    o to return
     """
 # End OF REMINDERS MENU OPTIONS
 
@@ -224,6 +231,7 @@ clock_menu = """
     4.Stopwatch
     5.Countdown timer
     6.Auto update of time and date
+    0 to return
     """
 # End OF CLOCK MENU OPTIONS
 
@@ -231,6 +239,7 @@ clock_menu = """
 # START OF PROFILES MENU OPTIONS
 profiles_menu = """
     profiles
+    0 to return
     """
 # End OF PROFILES MENU OPTIONS
 
@@ -238,124 +247,150 @@ profiles_menu = """
 # START OF SIM SERVICES MENU OPTIONS
 sim_services_menu = """
     SIM services
+    0 to return
     """
 # End OF SIM SERVICES MENU OPTIONS
 
 
 print(main_menu)
-while(True):
-    user_option = int(input("Enter menu option: "))        
-    match user_option:
-        case 1:
+options = int(input("Enter menu option: "))
+
+
+if options == 1:
+    print(phone_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 8:
+            print(phone_submenu)
+        elif options != 8:
             print(phone_menu)
-            option = int(input("Enter menu option: "))
-            if option == 8:
-                print(phone_submenu)
-            elif option !=8:
-                print(main_menu)
-                continue
-            
-        case 2:
+        elif options == 0:
+            print(phone_menu)
+
+    
+if options == 2:
+    print(messages_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 7:
+            print(messages_submenu)
+        elif options != 7:
             print(messages_menu)
-            option = int(input("Enter menu option: "))
-            if option == 7: 
-                print(messages_submenu)
-                if option == 1:
-                    print(messages_innersubmenu_one)
-                elif option == 2:
-                    print(messages_innersubmenu_two)
-                elif option != 1 and option !=2:
-                    # print(messages_submenu)
-                    continue
-            elif option != 7:
-                # print("Invalid entry")
+            if options == 1:
+                print(messages_innersubmenu_one)
+            elif options == 2:
+                print(messages_innersubmenu_one)
+            elif options != 1 or options != 2:
                 print(messages_menu)
-                continue
-                option = int(input("Enter menu option: "))
-
-
-        case 3:
-            print(chat_menu)
-            option = int(input("Enter menu option: "))
-            if option !=7:
-                print(main_menu)
-                continue
-            
-        case 4:
-            print(call_registermenu)
-            option = int(input("Enter menu option: "))
-            if(option == 5):
-                print(call_registersubmenu_one)
-            elif(option == 6):
-                print(call_registersubmenu_two)
-            elif(option == 7):
-                print(call_registersubmenu_three)
-            elif(option == 8):
-                print(call_registersubmenu_four)
+            elif options == 0:
+                print(messages_menu)
                 
-        case 5:
+                
+if options == 3:
+    print(chat_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 0:
+            print(main_menu)
+                        
+    
+if options == 4:
+    print(call_registermenu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 5:
+            print(call_registersubmenu_one)
+        elif options == 6:
+            print(call_registersubmenu_two)
+        elif options == 7:
+            print(call_registersubmenu_three)
+        elif options == 8:
+            print(call_registersubmenu_four)
+        elif options != 5 or options != 6 or options != 7 or options !=8:
+            print(call_registermenu)
+            
+
+if options == 5:
+    print(tones_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options != 5:
             print(tones_menu)
+            if options == 0:
+                print(main_menu)
+  
             
-        case 6:
-            print(settings_menu)
-            option = int(input("Enter menu option: "))
-            if(option == 1):
-                print(settings_submenu_one)
-            elif(option == 2):
-                print(settings_submenu_two)
-            elif(option == 3):
-                print(settings_submenu_three)
-            elif(option == 4):
-                print(settings_submenu_four)
+if options == 6:
+    print(settings_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 1:
+            print(settings_submenu_one) 
+        elif options == 2:
+            print(settings_submenu_two)
+        elif options == 3:
+            print(settings_submenu_three)
+        elif options == 4:
+            print(settings_submenu_four) 
+            
+            
+if options == 7:
+    print(calldivert_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 0:
+            print(main_menu)
 
-        case 7:
-            print(calldivert_menu) 
-            option = int(input("Enter menu option: "))
-            if option !=1:
-                print(main_menu)
-                continue
 
-        case 8:
-            print(games_menu)
-            option = int(input("Enter menu option: "))
-            if option !=1:
-                print(main_menu)
-                continue
-            
-        case 9:
-            print(calculator_menu)
-            option = int(input("Enter menu option: "))
-            if option !=1:
-                print(main_menu)
-                continue
-            
-        case 10:
-            print(reminders_menu)
-            option = int(input("Enter menu option: "))
-            if option !=1:
-                print(main_menu)
-                continue
-            
-        case 11:
-            print(clock_menu)
-            option = int(input("Enter menu option: "))
-            if option !=1:
-                print(main_menu)
-                continue
-            
-        case 12:
-            print(profiles_menu)
-            option = int(input("Enter menu option: "))
-            if option !=1:
-                print(main_menu)
-                continue
-            
-        case 13:
-            print(sim_services_menu)
-            option = int(input("Enter menu option: "))
-            if option !=1:
-                print(main_menu)
-                continue
-        case _:   
-            print("You entered a wrong input")
-            break
+if options == 8:
+    print(games_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 0:
+            print(main_menu)
+    
+    
+if options == 9:
+    print(calcultor_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 0:
+            print(main_menu)
+    
+    
+if options == 10:
+    print(reminders_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 0:
+            print(main_menu)
+    
+    
+if options == 11:
+    print(clock_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 0:
+            print(main_menu)
+    
+    
+if options == 12:
+    print(profiles_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 0:
+            print(main_menu)
+    
+
+if options == 13:
+    print(sim_services_menu)
+    while True:
+        options = int(input("Enter menu option: "))
+        if options == 0:
+            print(main_menu)
+    
+
+# shut down phone
+if options == 0:
+    while True:
+        break    
