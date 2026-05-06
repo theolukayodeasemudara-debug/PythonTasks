@@ -265,7 +265,7 @@ if options == 1:
         elif options != 8:
             print(phone_menu)
         elif options == 0:
-            print(phone_menu)
+            print(main_menu)
 
     
 if options == 2:
