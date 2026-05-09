@@ -6,12 +6,12 @@
 # check whether the converted temperature is below or above the given threshold
 
 
-celsius_threshold = "20C"
-fahrenheit_threshold = "68F"
-temp = input("enter a temperature value: ")
+celsius_threshold = 20
+fahrenheit_threshold = 68
+temp = input("enter a temperature value: ").lower()
 
 unit = temp[-1]
-number = temp[:-1]
+number = int(temp[:-1])
 # print(unit, number)
 
 def fah_converter(number):
@@ -23,8 +23,20 @@ def cel_converter(number):
     return celsius
 
 
-if(unit == "f"):
-    print(fah_converter(number))
-elif(unit == "c"):
-    print(cel_converter(number))
+if unit == "f":
+    converted = cel_converter(number)
+    if converted < celsius_threshold:
+        print(f"{converted:.2f}C - Cold advisory")
+    else:
+        print(f"{converted:.2f}C - Heat alert")
+        
+elif unit == "c":
+    converted = fah_converter(number)
+    if converted < fahrenheit_threshold:
+        print(f"{converted}F - Cold advisory")
+    else:
+        print(f"{converted}F - Heat alert")
+else: print("invalid temperature value")
+
+
 
