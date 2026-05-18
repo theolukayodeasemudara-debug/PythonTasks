@@ -1,8 +1,0 @@
-# collect the name of item from the terminal from the user
-# collect the price of the item from the terminal from the user
-# collect promotional-code from the terminal from the user
-# calculate for when discount code applied is "SAVE10" to apply 10% discount
-# calculate for when discount code applied is "HALFOFF" to apply 50% discount
-# write a logic that accounts for when no discount code is applied
-
-
